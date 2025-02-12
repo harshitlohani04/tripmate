@@ -6,18 +6,14 @@ from django.conf import settings
 
 
 def handleData(file):
-    userData = json.load(file)
+    userData = json.loads(file)
     def generateResponse():
+        load_dotenv()
         api = os.getenv("Gem_KEY")
         genai.configure(api_key=api)
         model = genai.GenerativeModel("gemini-1.5-flash")
-        response = model.generate_content(f"Plan an {userData["days"]} day trip to {userData["location"]} given that I 
-                                          {userData["type of person"]} type of person. The mode of travel that I
-                                          would prefer is {userData["transport"]}")
-        return response
+        response = model.generate_content(f"Plan an {userData['days']} day trip to {userData['destination']} given that I\
+                                          {userData['type_of_group']} type of person")
+        return response.text
 
     return generateResponse()
-
-if __name__ == "__main__":
-    load_dotenv()
-    final_response = handleData(file=os.path.join(settings.BASE_DIR, "user_preferences.json"))

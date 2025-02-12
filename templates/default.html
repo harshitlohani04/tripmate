@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Default</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block content %}
+        <h1>This is the default page</h1>
+        <ul>
+            {% for person in indiv %}
+            <li>{{person}}</li>
+            {% endfor %}
+        </ul>
+        
+        
+        <form action="{{url_for('home')}}" method="POST">
+            <input type="text" name="name" placeholder="Name" required = "required">
+            <input type="number" name="age" placeholder="Age">
+            <input type="number" name="number_of_members" placeholder="Number Of Members" required = "required">
+            <input type="number" name="days" placeholder="Days" required = "required">
+            <select name="travel_with" id="tw" aria-label="travel_with">
+                <option value="friends">Friends</option>
+                <option value="family">Family</option>
+                <option value="solo">Solo</option>
+            </select>
+            <select name="type_of_group" id="type" aria-label="type_of_group">
+                <option value="foodie">Foodie</option>
+                <option value="adventure">Adventure Loving</option>
+                <option value="peaceful">Nature Loving</option>
+            </select>
+            <input type="text", name="destination", placeholder="Destination", required = "required">
+            <input type="submit" value="Create">
+        </form>
+
+        {% endblock %}
+    </body>
+</html>
