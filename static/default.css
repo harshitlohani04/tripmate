@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.navigation{
+    display: flex;
+    font-weight: 500;
+}
+
+.logo{
+    width: 40%;
+}
+
+.main-logo{
+    font-size: 1.5rem;
+    margin-left: 1.2rem;
+}
+
+.menu{
+    width: 60%;
+    display: flex;
+    justify-content: end;
+}
+
+.item{
+    margin: 0 2rem 0 2rem;
+    padding: 0 2rem 0 2rem;
+    align-content: center;
+}
+
+.item a{
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+    font-size: 1.5rem;
+    color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.item a:hover{
+    color: white;
+    background-color: black;
+}
+
+.mid-container{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-part{
+    font-size: 10rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.sub-heading{
+    font-size: 2rem;
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+}
+
+/* box-icon{
+    width: 100px;
+    display: flex;
+    height: 388px;
+} */
+
+.plan-trips{
+    display: flex;
+    height: 250px;
+}
+
+.plan-trips-head{
+    display: flex;
+    width: 45%;
+    font-size: 4rem;
+    justify-content: center;
+}
+
+.plan-trips-desc{
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    max-inline-size: 60ch;
+}

@@ -36,6 +36,6 @@ def register_routes(app, db):
             db.session.commit()
 
             indiv = User.query.all()
-            return render_template("default.html", indiv = indiv)
+            return render_template("index.html", indiv = indiv)
         elif request.method == "GET":
             return render_template("default.html")

@@ -4,19 +4,47 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Default</title>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="../static/default.css">
     </head>
     <body>
         {% block content %}
-        <h1>This is the default page</h1>
-        <ul>
-            {% for person in indiv %}
-            <li>{{person}}</li>
-            {% endfor %}
-        </ul>
-        
+        <nav class="navigation">
+            <div class="logo">
+                <p class="main-logo">Logo.</p>
+            </div>
+            <div class="menu">
+                <div class="item sign"><a href="#">Sign In/Sign Up</a></div>
+            </div>
+        </nav>
+        <section class="mid-container">
+            <div class="main-part">
+                <!-- <box-icon type='solid' name='plane-take-off' animation='burst'></box-icon> -->
+                <p style="margin-bottom: 20px;">Tripmate</p>
+            </div>
+            <div class="sub-heading">
+                Your one stop junction for trip planning.
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="plan-trips">
+                <div class="plan-trips-head">
+                    <!-- <box-icon name='paper-plane'></box-icon> -->
+                    <p>Plan your <br> trips smartly!!!</p>
+                </div>
+                <div class="plan-trips-desc">
+                    Traveling should be exciting, not stressful! With TripMate, you get a personalized itinerary 
+                    based on your interests, budget, and travel group. Whether you're a 
+                    foodie, adventure seeker, or nature lover, our AI-powered planner curates the best places to 
+                    visit, activities, and hotels tailored just for you. Simply enter your destination, travel 
+                    dates, and preferences, and let our smart system handle the rest. Say goodbye to endless 
+                    searching, plan your trip effortlessly and make the most of your journey!
+                </div>
+            </div>
+        </section>
         
         <form action="{{url_for('home')}}" method="POST">
             <input type="text" name="name" placeholder="Name" required = "required">
