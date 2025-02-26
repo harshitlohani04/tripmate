@@ -1,11 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 html{
     scroll-behavior: smooth;
 }
 body{
     font-family: "Bebas Neue", sans-serif;
+    /* animation: fade-in linear;
+    animation-timeline: view(); */
+}
+
+.scroll-watcher{
+    height: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #405D72;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher{
+    to{scale: 1 1;}
 }
 
 .navigation{
@@ -42,12 +63,12 @@ body{
     border-style: solid;
     border-width: 2px;
     border-radius: 15px;
-    transition: 1s;
+    transition: 1s ease;
 }
 
 .item a:hover{
-    color: white;
-    background-color: black;
+    background-color: #FFF8F3;
+    color: #405D72;
 }
 
 .mid-container{
@@ -61,6 +82,23 @@ body{
     display: flex;
     justify-content: center;
     font-weight: 600;
+    color: #405D72;
+    
+}
+.main-part p{
+    animation: typing 3s steps(30) forwards;
+    animation-delay: 1s;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes typing{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 31.55%;
+    }
 }
 
 .sub-heading{
@@ -79,13 +117,22 @@ body{
 .plan-trips{
     display: flex;
     height: 250px;
+    margin-bottom: 50px;
 }
 
 .plan-trips-head{
     display: flex;
+    margin-top: 0px;
     width: 45%;
     font-size: 4rem;
     justify-content: center;
+    color: #405D72;
+    /* animation: fade-in linear;
+    animation-timeline: view(); */
+}
+
+.plan-trips-head p{
+    margin-top: 0px;
 }
 
 .plan-trips-desc{
@@ -94,3 +141,115 @@ body{
     font-family: "Poppins";
     max-inline-size: 60ch;
 }
+
+@keyframes fade-in{
+    from{opacity: 0.3;}
+    to{opacity: 1;}
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+}
+
+.form button{
+    font-size: 1.1rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 7.5px;
+    color: whitesmoke;
+    background: #758694;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    transition: 0.75s ease-in-out;
+}
+
+.form a{
+    text-decoration: none;
+}
+
+.form button:hover{
+    color: white;
+    background-color: #405D72;
+}
+
+
+.plan-trips-form{
+    height: 1000px;
+    margin-top: 200px;
+}
+
+.plan-trip-form-heading{
+    font-size: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #405D72;
+    font-weight: 100;
+}
+
+.plan-trips-outside-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan-trip-main-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 520px;
+    font-size: 1.2rem;
+}
+
+.form-group{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.plan-trip-form-container{
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px 5px #758694;
+}
+
+.plan-trip-main-form label{
+    /* display: block; */
+    margin-top: 10px;
+    font-size: 1.4rem;
+    /* font-family: ; */
+}
+
+.plan-trip-main-form input, select{
+    /* display: block; */
+    font-size: 1rem;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: black;
+    margin: 5px 0px 5px 0px;
+    padding: 0px 0px 0px 7.5px;
+    height: 25px;
+}
+
+.plan-trips-form-button{
+    display: flex;
+    justify-content: center;
+}
+
+.plan-trips-form-button input{
+    padding: 7.5px 7.5px 7.5px 7.5px;
+    height: 35px;
+    background-color: #405D72;
+    color: white;
+
+}
+

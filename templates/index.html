@@ -10,12 +10,9 @@
     </head>
     <body>
         {% block content %}
-        <h1>This is the Index page</h1>
-        <ul>
-            {% for person in indiv %}
-            <li>{{person}}</li>
-            {% endfor %}
-        </ul>
+            <h1>This is the Index page</h1>
+            {% set val = indiv[-1] %}
+            {{ val }}
         {% endblock %}
     </body>
 </html>

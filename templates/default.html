@@ -11,6 +11,9 @@
     </head>
     <body>
         {% block content %}
+        <div class="scroll-watcher">
+
+        </div>
         <nav class="navigation">
             <div class="logo">
                 <p class="main-logo">Logo.</p>
@@ -22,7 +25,7 @@
         <section class="mid-container">
             <div class="main-part">
                 <!-- <box-icon type='solid' name='plane-take-off' animation='burst'></box-icon> -->
-                <p style="margin-bottom: 20px;">Tripmate</p>
+                <p style="margin-bottom: 20px">Tripmate</p>
             </div>
             <div class="sub-heading">
                 Your one stop junction for trip planning.
@@ -35,35 +38,102 @@
                     <!-- <box-icon name='paper-plane'></box-icon> -->
                     <p>Plan your <br> trips smartly!!!</p>
                 </div>
-                <div class="plan-trips-desc">
-                    Traveling should be exciting, not stressful! With TripMate, you get a personalized itinerary 
-                    based on your interests, budget, and travel group. Whether you're a 
-                    foodie, adventure seeker, or nature lover, our AI-powered planner curates the best places to 
-                    visit, activities, and hotels tailored just for you. Simply enter your destination, travel 
-                    dates, and preferences, and let our smart system handle the rest. Say goodbye to endless 
-                    searching, plan your trip effortlessly and make the most of your journey!
+                <div class="planning">
+                    <div class="plan-trips-desc">
+                        Traveling should be exciting, not stressful! With TripMate, you get a personalized itinerary 
+                        based on your interests, budget, and travel group. Whether you're a 
+                        foodie, adventure seeker, or nature lover, our AI-powered planner curates the best places to 
+                        visit, activities, and hotels tailored just for you. Simply enter your destination, travel 
+                        dates, and preferences, and let our smart system handle the rest. Say goodbye to endless 
+                        searching, plan your trip effortlessly and make the most of your journey!
+                    </div>
+                    <form action="{{url_for('home')}}" method="post" class="form">
+                        <a href="#plan-trips-form">
+                            <button class="plan-trips-desc button" name="plan" value="plan" type="button">Plan Your Trips Now</button>
+                        </a>
+                    </form>
+                    
+                </div>
+                
+            </div>
+            <div class="plan-trips">
+                <div class="plan-trips-head">
+                    <!-- <box-icon name='paper-plane'></box-icon> -->
+                    <p>Personalized <br> Recommendation</p>
+                </div>
+                <div class="planning">
+                    <div class="plan-trips-desc">
+                        Traveling should be exciting, not stressful! With TripMate, you get a personalized itinerary 
+                        based on your interests, budget, and travel group. Whether you're a 
+                        foodie, adventure seeker, or nature lover, our AI-powered planner curates the best places to 
+                        visit, activities, and hotels tailored just for you. Simply enter your destination, travel 
+                        dates, and preferences, and let our smart system handle the rest. Say goodbye to endless 
+                        searching, plan your trip effortlessly and make the most of your journey!
+                    </div>
+                    <form action="{{url_for('home')}}" method="post" class="form">
+                        <a href="#plan-trips-form">
+                            <button class="plan-trips-desc button" name="plan" value="plan" type="button">Get the Recommendations</button>
+                        </a>
+                    </form>
+                    
                 </div>
             </div>
+            
         </section>
+
+        <section class = "plan-trips-form" id="plan-trips-form">
+            <h1 class="plan-trip-form-heading">Start your planning now</h1>
+            <div class="plan-trips-outside-container">
+                <div class="plan-trip-form-container">
+                    <form action="{{url_for('home')}}" method="POST" class="plan-trip-main-form">
+                        <div class="form-group">
+                            <label for="name">
+                                <span>Enter Your Full Name Here</span>
+                            </label><br>
+                            <input type="text" name="name" required = "required" id="name"><br>
         
-        <form action="{{url_for('home')}}" method="POST">
-            <input type="text" name="name" placeholder="Name" required = "required">
-            <input type="number" name="age" placeholder="Age">
-            <input type="number" name="number_of_members" placeholder="Number Of Members" required = "required">
-            <input type="number" name="days" placeholder="Days" required = "required">
-            <select name="travel_with" id="tw" aria-label="travel_with">
-                <option value="friends">Friends</option>
-                <option value="family">Family</option>
-                <option value="solo">Solo</option>
-            </select>
-            <select name="type_of_group" id="type" aria-label="type_of_group">
-                <option value="foodie">Foodie</option>
-                <option value="adventure">Adventure Loving</option>
-                <option value="peaceful">Nature Loving</option>
-            </select>
-            <input type="text", name="destination", placeholder="Destination", required = "required">
-            <input type="submit" value="Create">
-        </form>
+                            <label for="age">
+                                <span>Enter Your Age Here</span>
+                            </label><br>
+                            <input type="number" name="age" id="age"><br>
+                            <label for="nom">
+                                <span>Number of Members travelling with you</span>
+                            </label><br>
+                            <input type="number" name="number_of_members" required = "required" id="nom"><br>
+                            <label for="days">
+                                <span>Number of days you are travelling for</span>
+                            </label><br>
+                            <input type="number" name="days" required = "required" id="days"><br>
+                            <label for="tw">
+                                <span>Who is your travel companion</span>
+                            </label><br>
+                            <select name="travel_with" id="tw" aria-label="travel_with">
+                                <option value="friends">Friends</option>
+                                <option value="family">Family</option>
+                                <option value="solo">Solo</option>
+                            </select><br>
+                            <label for="type">
+                                <span>Which of the following describes you the best</span>
+                            </label><br>
+                            <select name="type_of_group" id="type" aria-label="type_of_group">
+                                <option value="foodie">Foodie</option>
+                                <option value="adventure">Adventure Loving</option>
+                                <option value="peaceful">Nature Loving</option>
+                            </select><br>
+                            <label for="tw">
+                                <span>Enter your Destination</span>
+                            </label><br>
+                            <input type="text" name="destination" required = "required" id="destination"><br><br>
+                            <div class="plan-trips-form-button">
+                                <input type="submit" value="Create">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+        </section>
 
         {% endblock %}
     </body>
